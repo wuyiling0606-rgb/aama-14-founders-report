@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAMA 台北搖籃計畫｜第14期 創業家 2026 近況報告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+    background: #eef4ff;
+    color: #1a1a2e;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ── Cover ── */
+  #cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #EEF4FF;
+    text-align: center;
+    padding: 40px;
+  }
+  #cover .logo-ring {
+    width: 160px; height: auto;
+    margin-bottom: 24px;
+  }
+  #cover .logo-ring img { width: 100%; display: block; }
+  #cover h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
+  #cover h2 { font-size: 1.1rem; color: #1A73E8; margin-bottom: 6px; font-weight: 400; }
+  #cover p  { color: #777777; font-size: 0.9rem; margin-bottom: 24px; }
+  #cover .cover-photo {
+    width: 100%; max-width: 680px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(26,115,232,0.18);
+    margin-bottom: 36px;
+    flex-shrink: 0;
+  }
+  #cover .cover-photo img {
+    width: 100%; display: block;
+    object-fit: cover; max-height: 340px;
+  }
+  #cover .meta { display: flex; gap: 40px; margin-bottom: 50px; }
+  #cover .meta-item { text-align: center; }
+  #cover .meta-item .num { font-size: 2rem; font-weight: 700; color: #1A73E8; }
+  #cover .meta-item .label { font-size: 0.8rem; color: #777777; margin-top: 4px; }
+  #cover .start-btn {
+    background: #1A73E8;
+    color: #fff; border: none; padding: 14px 48px;
+    border-radius: 30px; font-size: 1rem; cursor: pointer;
+    font-weight: 600; letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(26,115,232,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  #cover .start-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,115,232,0.45); }
+
+  /* ── Slides wrapper ── */
+  #slides-wrapper {
+    display: none;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  /* ── Top bar ── */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #dde6f5;
+    padding: 10px 24px;
+    flex-shrink: 0;
+  }
+  .topbar .brand { display: flex; align-items: center; gap: 10px; }
+  .topbar .brand .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #1A73E8;
+  }
+  .topbar .brand span { font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; color: #333333; }
+  .topbar .counter { font-size: 0.85rem; color: #777777; }
+  .topbar .nav-btns { display: flex; gap: 8px; }
+  .topbar .nav-btns button {
+    background: #dde6f5; border: 1px solid #c8d5e8;
+    color: #333333; padding: 5px 16px; border-radius: 6px;
+    cursor: pointer; font-size: 0.8rem;
+    transition: background 0.15s;
+  }
+  .topbar .nav-btns button:hover { background: #c8d5e8; }
+  .topbar .nav-btns button:disabled { opacity: 0.35; cursor: default; }
+
+  /* ── Progress bar ── */
+  .progress-bar { height: 3px; background: #dde6f5; flex-shrink: 0; }
+  .progress-fill { height: 100%; background: #1A73E8; transition: width 0.3s; }
+
+  /* ── Slide content ── */
+  .slide-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 36px;
+    background: #f4f7fc;
+  }
+
+  .slide { display: none; }
+  .slide.active { display: block; }
+
+  /* ── Slide header ── */
+  .slide-header {
+    display: flex; align-items: flex-start; gap: 20px; margin-bottom: 22px;
+  }
+  .avatar {
+    width: 80px; height: 80px; border-radius: 50%; flex-shrink: 0;
+    background: #1A73E8;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; font-weight: 700; color: #fff;
+    box-shadow: 0 0 20px rgba(26,115,232,0.3);
+    overflow: hidden;
+  }
+  .avatar img {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+  }
+  .slide-header-info h2 {
+    font-size: 1.5rem; font-weight: 700; margin-bottom: 4px;
+  }
+  .slide-header-info h2 span { color: #777777; font-size: 1rem; font-weight: 400; margin-left: 8px; }
+  .slide-header-info .company { font-size: 1rem; color: #1A73E8; font-weight: 500; margin-bottom: 8px; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge {
+    padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .badge-domain { background: #E8F4FF; color: #1A73E8; border: 1px solid #B8D4F5; }
+  .badge-stage-I { background: #E8F4FF; color: #1A73E8; border: 1px solid #1A73E8; }
+  .badge-stage-II { background: #FFF3E0; color: #F5A020; border: 1px solid #E67C00; }
+  .badge-stage-III { background: #FFEBEE; color: #E53935; border: 1px solid #EF9A9A; }
+  .badge-market { background: #FFF3E0; color: #F5A020; border: 1px solid #FFCC80; }
+  .badge-status-green  { background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; }
+  .badge-status-yellow { background: #FFF8E1; color: #7c4f00; border: 1px solid #FFD54F; }
+  .badge-status-red    { background: #FFEBEE; color: #C62828; border: 1px solid #EF9A9A; }
+  .badge-mentor { background: #F3F4F6; color: #374151; border: 1px solid #D1D5DB; }
+
+  /* ── Metrics row ── */
+  .metrics {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;
+  }
+  .metric-card {
+    background: #ffffff; border: 1px solid #dde6f5;
+    border-radius: 8px; padding: 12px 14px;
+    box-shadow: 0 1px 4px rgba(26,115,232,0.07);
+  }
+  .metric-card .label { font-size: 0.68rem; color: #777777; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+  .metric-card .value { font-size: 1.35rem; font-weight: 700; color: #1a1a2e; }
+  .metric-card .value.green { color: #1A73E8; }
+
+  /* ── Sections grid ── */
+  .sections { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+  .section-full { grid-column: 1 / -1; }
+
+  .card {
+    background: #ffffff; border: 1px solid #dde6f5;
+    border-radius: 10px; padding: 14px 16px;
+    box-shadow: 0 1px 6px rgba(26,115,232,0.07);
+  }
+  .card h3 {
+    font-size: 0.72rem; color: #777777; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .card h3 .icon { font-size: 1rem; }
+  .card p, .card ul { font-size: 0.85rem; color: #333333; line-height: 1.65; }
+  .card ul { padding-left: 16px; }
+  .card ul li { margin-bottom: 4px; }
+  .card-challenge {
+    border-left: 3px solid #EF5350; background: #fffafa;
+  }
+  .card-challenge h3 { color: #C62828; }
+  .card-strategy {
+    border-left: 3px solid #1A73E8; background: #f8fbff;
+  }
+  .card-strategy h3 { color: #1565C0; }
+
+  /* ── Timeline updates ── */
+  .updates-timeline { position: relative; padding-left: 18px; }
+  .updates-timeline::before {
+    content: ''; position: absolute; left: 4px; top: 8px; bottom: 8px;
+    width: 2px; background: #dde6f5; border-radius: 1px;
+  }
+  .updates-timeline .update-item { position: relative; }
+  .updates-timeline .update-item::before {
+    content: ''; position: absolute; left: -17px; top: 10px;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #1A73E8; border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #1A73E8;
+  }
+  .updates-timeline .update-item.q2::before { background: #F5A020; box-shadow: 0 0 0 1px #F5A020; }
+
+  .update-item {
+    padding: 8px 10px; border-radius: 6px;
+    background: #f4f8ff; margin-bottom: 6px;
+    border-left: 3px solid #1A73E8;
+    font-size: 0.82rem; line-height: 1.55; color: #333333;
+  }
+  .update-item.q2 { border-left-color: #F5A020; }
+  .update-item.online { border-left-color: #1A73E8; }
+  .update-item .tag {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 3px;
+    display: block;
+  }
+  .update-item .tag.green { color: #1A73E8; }
+  .update-item .tag.orange { color: #F5A020; }
+  .update-item .tag.blue { color: #1A73E8; }
+
+  .mentor-row {
+    display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #333333;
+  }
+  .mentor-dot { width: 8px; height: 8px; border-radius: 50%; background: #1A73E8; }
+
+  .no-data { color: #777777; font-style: italic; font-size: 0.82rem; }
+
+  /* ── Keyboard hint ── */
+  .kbd-hint {
+    text-align: center; padding: 7px; background: #ffffff;
+    border-top: 1px solid #dde6f5;
+    font-size: 0.72rem; color: #777777; flex-shrink: 0;
+  }
+  .kbd { background: #dde6f5; border: 1px solid #c8d5e8; padding: 1px 6px; border-radius: 4px; font-family: monospace; }
+
+  /* ── Index slide (s0) ── */
+  .idx-top {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px; padding-bottom: 13px;
+    border-bottom: 2px solid #dde6f5;
+  }
+  .idx-top h2 { font-size: 1.1rem; font-weight: 700; color: #1a1a2e; }
+  .idx-top h2 em { color: #1A73E8; font-style: normal; }
+  .idx-top p { font-size: 0.75rem; color: #777; margin-top: 2px; }
+  .idx-badge {
+    background: #EBF4FF; border: 1px solid #B8D4F5; border-radius: 20px;
+    color: #1A73E8; font-size: 0.72rem; font-weight: 700; padding: 4px 14px; flex-shrink: 0;
+  }
+  .idx-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .idx-row {
+    display: flex; align-items: center; gap: 9px;
+    padding: 6px 8px; border-radius: 6px; cursor: pointer;
+    border-bottom: 1px solid #f0f4f8; transition: background 0.12s;
+  }
+  .idx-row:last-child { border-bottom: none; }
+  .idx-row:hover { background: #EBF4FF; }
+  .idx-row:hover .idx-arr { opacity: 1; }
+  .idx-n { font-size: 0.62rem; color: #bbb; width: 18px; text-align: right; flex-shrink: 0; }
+  .idx-av {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    background: #1A73E8;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700; color: #fff;
+  }
+  .idx-info { flex: 1; min-width: 0; }
+  .idx-rname { font-size: 0.83rem; font-weight: 700; color: #1a1a2e; display: block; }
+  .idx-rco { font-size: 0.68rem; color: #777; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .idx-arr { font-size: 0.7rem; color: #1A73E8; flex-shrink: 0; opacity: 0; transition: opacity 0.12s; }
+  .idx-sum {
+    margin-top: 12px; padding: 10px 14px; border-radius: 8px;
+    background: #FFF8EE; border: 1px solid #ffe0b2; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.12s, border-color 0.12s;
+  }
+  .idx-sum:hover { background: #FFF0D4; border-color: #F5A020; }
+  .idx-sum-label { font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
+  .idx-sum-desc { font-size: 0.72rem; color: #777; margin-top: 2px; }
+  .idx-sum-arr { color: #F5A020; font-size: 1rem; flex-shrink: 0; }
+
+  /* ── Sheet Live Card ── */
+  .sheet-live-card {
+    background: #ffffff;
+    border: 1px solid #90CAF9;
+    border-radius: 10px;
+    padding: 14px 16px;
+    grid-column: 1 / -1;
+  }
+  .sheet-live-card h3 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #1565C0;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sheet-live-dot {
+    width: 8px; height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    display: inline-block;
+    animation: livepulse 2s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes livepulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .sheet-q-block { margin-top: 8px; }
+  .sheet-q-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #1565C0;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    letter-spacing: 0.03em;
+  }
+  .sheet-q-text {
+    font-size: 0.8rem;
+    color: #1a1a2e;
+    white-space: pre-wrap;
+    line-height: 1.65;
+    padding: 7px 11px;
+    background: #fff;
+    border-radius: 6px;
+    border-left: 3px solid #1A73E8;
+  }
+  .sheet-msg { color: #90A4AE; font-size: 0.78rem; font-style: italic; }
+
+  @media (max-width: 720px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .sections { grid-template-columns: 1fr; }
+    .slide-area { padding: 16px 18px; }
+    .founder-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+
+  /* ── Summary slide styles ── */
+  .status-section { margin-bottom: 16px; }
+  .status-section:last-child { margin-bottom: 0; }
+  .status-section-hd {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+    padding: 5px 10px; border-radius: 5px; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .status-section-hd span { margin-left: auto; font-weight: 500; opacity: 0.65; }
+  .status-section-hd.sh-green  { background: #E8F5E9; color: #2E7D32; border-left: 3px solid #4CAF50; }
+  .status-section-hd.sh-yellow { background: #FFF8E1; color: #7c4f00; border-left: 3px solid #F5A020; }
+  .status-section-hd.sh-red    { background: #FFEBEE; color: #C62828; border-left: 3px solid #EF5350; }
+  .status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 10px;
+  }
+  .se {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 10px; border-radius: 6px; cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.12s, border-color 0.12s;
+  }
+  .se:hover { background: #f0f4ff; border-color: #dde6f5; }
+  .se-name { font-weight: 700; font-size: 0.82rem; flex-shrink: 0; min-width: 44px; }
+  .se-co   { font-size: 0.72rem; color: #888; flex-shrink: 0; min-width: 72px; }
+  .se-note { font-size: 0.75rem; color: #444; flex: 1; }
+
+  .founder-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .founder-chip {
+    border-radius: 8px;
+    padding: 9px 10px;
+    border: 1px solid;
+    font-size: 0.73rem;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+  .founder-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(26,115,232,0.15);
+  }
+  .founder-chip .chip-name { font-weight: 700; display: block; }
+  .founder-chip .chip-co { color: #777777; font-size: 0.62rem; display: block; margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .founder-chip .chip-status { font-size: 0.63rem; display: block; }
+  .chip-green { background: #E8F4FF; border-color: #1A73E8; }
+  .chip-yellow { background: #FFF8E1; border-color: #E67C00; }
+  .chip-red { background: #FFEBEE; border-color: #EF9A9A; }
+
+  .news-row { display: flex; flex-direction: column; gap: 8px; }
+  .news-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: #f4f8ff; border-radius: 8px; padding: 10px 12px;
+    border-left: 3px solid #1A73E8;
+  }
+  .news-ico { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+  .news-title { font-size: 0.84rem; font-weight: 600; color: #1a1a2e; margin-bottom: 3px; }
+  .news-desc { font-size: 0.78rem; color: #333333; line-height: 1.55; }
+  .news-src { font-size: 0.65rem; color: #777777; margin-top: 4px; }
+  .news-src a { color: #1A73E8; text-decoration: none; font-weight: 500; }
+  .news-src a:hover { text-decoration: underline; }
+
+  .obs-block { margin-bottom: 10px; }
+  .obs-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; margin-bottom: 6px; color: #777777;
+  }
+  .obs-item {
+    background: #f4f8ff; border-radius: 6px; padding: 8px 12px;
+    font-size: 0.8rem; color: #333333; line-height: 1.6;
+    margin-bottom: 5px; border-left: 3px solid;
+  }
+  .obs-item strong { color: #1a1a2e; }
+  .obs-red .obs-item { border-left-color: #E53935; }
+  .obs-yellow .obs-item { border-left-color: #F5A020; }
+  .obs-green .obs-item { border-left-color: #1A73E8; }
+
+  .trend-item {
+    background: #f4f8ff; border-radius: 6px; padding: 9px 12px;
+    font-size: 0.8rem; color: #333333; line-height: 1.6;
+    margin-bottom: 6px; border-left: 3px solid #F5A020;
+  }
+  .trend-item strong { color: #1a1a2e; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div id="cover">
+  <div class="logo-ring"><img src="aama-logo.png" alt="AAMA 台北搖籃計畫"></div>
+  <h1>AAMA 台北搖籃計畫</h1>
+  <h2>第 14 期 創業家 2026 近況報告</h2>
+  <p>Founders Update Report for Mentors｜April 2026</p>
+  <div class="cover-photo">
+    <img src="cover-photo.jpg" alt="AAMA 第14期 創業家合照">
+  </div>
+  <div class="meta">
+    <div class="meta-item"><div class="num">24</div><div class="label">創業家</div></div>
+    <div class="meta-item"><div class="num">12</div><div class="label">配對導師</div></div>
+    <div class="meta-item"><div class="num">2</div><div class="label">主要領域</div></div>
+  </div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+    <button class="start-btn" onclick="startSlides()">開始瀏覽 →</button>
+    <button class="start-btn" style="background:#fff;color:#1A73E8;border:2px solid #1A73E8;box-shadow:0 4px 20px rgba(26,115,232,0.15)" onclick="startSlides();showSlide(25)">📊 動態摘要</button>
+  </div>
+</div>
+
+<!-- ══════════ SLIDES ══════════ -->
+<div id="slides-wrapper">
+  <div class="topbar">
+    <div class="brand"><div class="dot"></div><span>AAMA 14th · Founders Report 2026</span></div>
+    <div class="counter" id="counter">1 / 25</div>
+    <div class="nav-btns">
+      <button onclick="goHome()" style="color:#1A73E8;border-color:#B8D4F5">🏠 首頁</button>
+      <button onclick="showSlide(25)" style="color:#F5A020;border-color:#ffe0b2">📊 摘要</button>
+      <button id="prev-btn" onclick="changeSlide(-1)" disabled>← 上一位</button>
+      <button id="next-btn" onclick="changeSlide(1)">下一位 →</button>
+    </div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progress" style="width:4%"></div></div>
+  <div class="slide-area" id="slide-area">
+
+    <!-- ═══ SLIDE 1: 李芷婷 ═══ -->
+    <div class="slide active" id="s1">
+      <div class="slide-header">
+        <div class="avatar">芷</div>
+        <div class="slide-header-info">
+          <h2>李芷婷 <span>Monica</span></h2>
+          <div class="company">艾知科技 AiSeed｜AI 自主飛行偵查無人機</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · AIoT</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國際市場（歐美）</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">11~20 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">邱麗孟</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>動態調整商業模式及成長策略</li>
+            <li>核心團隊與中階主管建立</li>
+            <li>取得公司成長所需資金</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>鞏固台灣領導地位、強化物理AI研發</li>
+            <li>掌握國際需求、推進在地化布局（美日）</li>
+            <li>深化SI合作拓展政府應用市場</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            1月班會：有兩個台大經濟背景特助加入團隊
+          </div>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            正式啟動募資。國防部專案訂單超出預估三倍，造成供應鏈壓力；因投入新項目導致資金減少，需加快募資。團隊規模同步擴增三倍。導師建議：把產品做好再推出去。
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            完成 Pre-A 輪募資 ~1.95 億台幣，由和碩領投、SparkLabs 跟投。和碩將成為硬體合作夥伴加速量產。技術：無GPS自主視覺飛行，第二代 Cyberdrone 軍民兩用。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 2: 黃建堯 ═══ -->
+    <div class="slide" id="s2">
+      <div class="slide-header">
+        <div class="avatar">堯</div>
+        <div class="slide-header-info">
+          <h2>黃建堯 <span>Duncan</span></h2>
+          <div class="company">業安科技 Yallvend｜IoT 智慧販賣機升級方案</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · AIoT</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內為主</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">21~50 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">游直翰</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>持續調整組織架構及營運流程</li>
+            <li>動態調整商業模式及成長策略</li>
+            <li>提升國際化運營能力</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>搭配 VPC 銷售推動高單價出口（日本）</li>
+            <li>跨界合作實現自營金流轉化</li>
+            <li>發展廣告分潤拓展營收來源</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            正在與中華職棒合作，計劃在東京設立販賣機，協助對接設計師蘭花公仔等週邊商品
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            獲得 6,000 萬新台幣資金注入；進攻沖繩市場，聯手當地飲料大廠舉辦「販賣機大冒險」活動；IoT 方案已部署至日本、新加坡、菲律賓、印尼、泰國。2025/3 在創創早餐會分享進軍日本歷程。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 3: 謝賀祥 ═══ -->
+    <div class="slide" id="s3">
+      <div class="slide-header">
+        <div class="avatar">Jac</div>
+        <div class="slide-header-info">
+          <h2>謝賀祥 <span>Jac</span></h2>
+          <div class="company">聯覺科技 NunoX｜紡織 AI 布料數位孿生平台</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · AIoT</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國內為主</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value">&lt; 10M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">1~10 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">0–2 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">何經華</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>動態調整商業模式及成長策略</li>
+            <li>取得公司成長所需資金</li>
+            <li>建立並善用策略夥伴協助成長</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>取得大品牌認證進入供應鏈推薦清單</li>
+            <li>確認新產品-商模-市場關聯</li>
+            <li>整合地端 AI 解決供應鏈保密需求</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            Pre-seed 輪已結束；3 月前往紐約，4 月返台；Q3 預計在美國進行正式募資
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            榮獲 Under Armour 鞋材數位化設備指定供應商；入選 NVIDIA Inception Program；2025 COMPUTEX 代表台灣AI新創之一；AI模擬布料實現紡織淨零，2025/6 中央社報導。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 4: 林沅霖 ═══ -->
+    <div class="slide" id="s4">
+      <div class="slide-header">
+        <div class="avatar">林</div>
+        <div class="slide-header-info">
+          <h2>林沅霖 <span>Yuanlin</span></h2>
+          <div class="company">易舶科技 Zeabur｜AI 原生一鍵雲端部署平台</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 企業雲端</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國際（中國、美國）</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value">&lt; 10M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">1~10 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">0–2 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">李明哲</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>動態調整商業模式及成長策略</li>
+            <li>建立並善用策略夥伴協助成長</li>
+            <li>核心團隊與人才建立</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>強化 Zeabur 品牌在 Vibe Coding 時代定位</li>
+            <li>聚焦美國開發者社群（Cursor、Bolt.new 合作）</li>
+            <li>完成 150 萬美元募資，目標 2026 年底 ARR 200 萬美元</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            導生會議討論：行銷策略轉型（形式→互動）、技術客服主管職缺、B2B 擴張路徑（以替代成本為定價邏輯）、TA 管道追蹤
+          </div>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            準備赴美募資並拓展市場。B2B 拓展不順加上第一季用戶增長過快，現金流急速縮減，需緊急尋找資金。
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            完成 200 萬美元天使輪（6,400 萬台幣），AVA 天使投資；用戶突破 10 萬，付費 5,000+；Product Hunt 台灣首個破千票當日冠軍；24 歲創辦人，畢業專題起家。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 5: 陳啟桐 ═══ -->
+    <div class="slide" id="s5">
+      <div class="slide-header">
+        <div class="avatar">律</div>
+        <div class="slide-header-info">
+          <h2>陳啟桐 <span>Steven</span></h2>
+          <div class="company">律果科技 LegalSign.ai｜AI 法律工作流程管理平台</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 企業雲端</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value">&lt; 10M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">1~10 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">程淑芬</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>吸引及留住適合的人才</li>
+            <li>取得公司成長所需資金</li>
+            <li>動態調整商業模式及成長策略</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>擴編銷售團隊強化營收動能</li>
+            <li>委任安永（EY）健全財務體質，申請創櫃板</li>
+            <li>開拓多元募資管道</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            1月班會：有8個工程師但AI推不動，太多客戶需要客製化，想了解如何拓展銷售
+          </div>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            覺得員工不積極，正在思考如何提升團隊動力
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            電子簽章 + 合約管理 + 生成式 AI 法律應用；客戶含國泰金控、宏碁集團；獲 2024 AWS 生成式AI未來之星 NVIDIA 特別獎；創辦人為律師暨專利師。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 6: 張賀翔 ═══ -->
+    <div class="slide" id="s6">
+      <div class="slide-header">
+        <div class="avatar">倉</div>
+        <div class="slide-header-info">
+          <h2>張賀翔 <span>Gary</span></h2>
+          <div class="company">增站運籌科技 JENJAN｜AI 智慧連鎖衛星倉儲物流</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 企業雲端</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">21~50 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">0–2 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">楊正大</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>提升國際化運營能力</li>
+            <li>取得公司成長所需資金</li>
+            <li>創辦人 / 執行長領導力提升</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>建構全球彈性 3PL 衛星倉網絡</li>
+            <li>打造智慧倉儲與 AI 決策中樞</li>
+            <li>轉型 AI 驅動物流服務</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8 ⚠️</span>
+            將 1,000 萬台幣匯至美國用於投資移民，未注意現金燃燒率，導致現金流極度緊張。在紐約因資金疑似含「紅色資本」而拒絕 115 萬美元投資。目前接觸四位新 VC，進行 3.2 億美元的盡職調查，但財報項目定義不清造成募資困難。
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            AI + WMS 智慧倉管平台核心；2025加盟博覽會正式發表智慧倉儲加盟模式；連接主要電商平台 API，提供多管道物流服務。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 7: 林依蓉 ═══ -->
+    <div class="slide" id="s7">
+      <div class="slide-header">
+        <div class="avatar">淨</div>
+        <div class="slide-header-info">
+          <h2>林依蓉 <span>Emma</span></h2>
+          <div class="company">科淨能源｜CO₂ 電化學轉換、工業低碳轉型</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 能源科技</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value">&lt; 10M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">1~10 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">3–5 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">邱麗孟</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>取得公司成長所需資金</li>
+            <li>如何找到對的人才</li>
+            <li>建立策略夥伴關係</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>推進 CO₂ 模組化電解系統商業化</li>
+            <li>拓展日本、新加坡市場</li>
+            <li>探索與台達電等大廠合作可能</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">近期狀況</span>
+            內部聚焦人才招募與策略夥伴談判，目前無新公開動態
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            科淨能源開發亞洲首個模組化 CO₂ 電解系統，將工業 CO₂ 轉換為合成氣與乙烯；高效率、低能耗、彈性部署，獲多項創新加速器認可。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 8: 郭翰 ═══ -->
+    <div class="slide" id="s8">
+      <div class="slide-header">
+        <div class="avatar">博</div>
+        <div class="slide-header-info">
+          <h2>郭翰 <span>Han</span></h2>
+          <div class="company">博世科智能 Blutech｜AIoT 企業能源管理系統</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 能源科技</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">21~50 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">10–15 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">高誌廷</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>現階段挑戰</h3>
+          <ul>
+            <li>化解募資後加薪政策引發的組織衝突</li>
+            <li>建立中階主管梯隊與薪酬治理制度</li>
+            <li>加速 ENERLYZER AI 商業訂單轉換</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>ENERLYZER AI 能源管理系統商業化</li>
+            <li>與台電合作推廣商業低壓市場</li>
+            <li>台灣-馬來西亞綠色科技合作深化</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            業務人員達 20 位；ENERLYZER AI 平台於 2025 ESG 高峰會正式發表
+          </div>
+          <div class="update-item">
+            <span class="tag green">Q2 2026 · 募資成功 ✅</span>
+            國發基金募資順利完成。先前因領投公司「迅德」資格問題延宕四個月，現已解決。取得資金後進入加速成長期，同步處理加薪政策引發的組織整合問題。
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">媒體 / 獎項</span>
+            台灣政府採購新創計畫「冷凍空調節能」「電力監控診斷」雙料第一名；台灣 ESCO 協會成員；台馬綠色科技合作獲獎；與台電合作推廣商業低壓節能市場。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 9: 鄭智文 ═══ -->
+    <div class="slide" id="s9">
+      <div class="slide-header">
+        <div class="avatar">安</div>
+        <div class="slide-header-info">
+          <h2>鄭智文 <span>Ivan</span></h2>
+          <div class="company">安瑟樂威｜虛擬電廠 VPP、需量反應與儲能平台</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 能源科技</span>
+            <span class="badge badge-stage-III">Stage III</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">100M~1B</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">21~50 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">3–5 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">張益肇</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>提升國際化運營能力</li>
+            <li>動態調整商業模式</li>
+            <li>核心團隊建立</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>2026 年底上台灣創新板</li>
+            <li>建立內稽內控制度</li>
+            <li>泰國、新加坡海外擴張</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">近期狀況</span>
+            預計 2026 年底上創新板，正在建制內稽內控；海外布局：泰國分公司（屋頂太陽能、場域節能）、新加坡子公司
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            VPP 電力交易平台累計超過 100MW，運行逾 30,000 小時；天下雜誌 2026 SDGs 論壇講者；2025 花蓮地震時儲能即時回充 510MW；VPP 像「能源版 Uber」，節省成本 40%。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 10: 周正剛 ═══ -->
+    <div class="slide" id="s10">
+      <div class="slide-header">
+        <div class="avatar">齒</div>
+        <div class="slide-header-info">
+          <h2>周正剛 <span>Bill</span></h2>
+          <div class="company">德睿生醫 Dentscape｜AI 雲端假牙設計平台</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 智慧醫療</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國際（歐美）</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value">&lt; 10M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">11~20 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">3–5 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">陳良基</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>動態調整商業模式及成長策略</li>
+            <li>核心團隊建立</li>
+            <li>取得資金</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>與哈佛牙醫學院深度合作</li>
+            <li>擴展美國付費客戶</li>
+            <li>準備 250 萬美元 A 輪募資</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            分享與日本合作夥伴的商業談判經驗；對方試圖將分潤比例從 50-50 改為 6-4，討論如何設計合理分潤結構
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            AI 10 分鐘設計 100 顆假牙；2025 年與哈佛牙醫學院共同發表研究；已開拓美國付費客戶；完成 2,000 萬台幣前期募資；台大、Meta、NVIDIA 博士級技術團隊。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 11: 鍾成晏 ═══ -->
+    <div class="slide" id="s11">
+      <div class="slide-header">
+        <div class="avatar">孕</div>
+        <div class="slide-header-info">
+          <h2>鍾成晏 <span>CY</span></h2>
+          <div class="company">好孕行生醫 iPreg｜精子快選晶片、生殖醫療科技</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 智慧醫療</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國際（歐美、日本、東南亞）</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value">&lt; 10M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">1~10 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">陳良基</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>核心團隊與中階主管建立</li>
+            <li>動態調整商業模式</li>
+            <li>建立策略夥伴</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>台灣 TFDA + 美國 FDA 認證</li>
+            <li>馬來西亞 MDA 已通過認證</li>
+            <li>擴展日本、中東市場</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            1月班會：正在積極募資；已取得馬來西亞 MDA 認證（相當於 FDA）；2月前往中東地區開拓市場；正積極發展日本、馬來西亞市場
+          </div>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            目前資金需求迫切，正在進行新一輪募資
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            精子快選晶片 20 分鐘完成篩選、健康精子率達 95%；2024 BIO 北美展獲 25 個商洽機會；台灣、美國 FDA 申請中。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 12: 張永承 ═══ -->
+    <div class="slide" id="s12">
+      <div class="slide-header">
+        <div class="avatar">🛸</div>
+        <div class="slide-header-info">
+          <h2>張永承 <span>Austin</span></h2>
+          <div class="company">張量科技 Tensor Tech｜衛星球型馬達姿態控制系統</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 太空科技</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">11~20 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">何經華</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>提升國際化運營能力</li>
+            <li>核心團隊建立</li>
+            <li>動態調整商業模式</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>台美「共同生產」政策，美國設立技術整合據點</li>
+            <li>與 Northrop Grumman 合作 ADCS 系統</li>
+            <li>大徵才、建立台灣低軌衛星星座供應鏈</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            1月班會：規劃 ESOP 股權設計（討論員工綁約年限與激勵設計）；大規模徵才中，已招募 HR 主管（年薪 200 萬）。2月班會：完成 A 輪募資！公司規模近 30 人，均齡跨度 20-55 歲，20 位 RD；設有無塵室，主要透過參展拓展客戶。
+          </div>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            完成最終募資文件簽署；處理通路招募與創辦人間股權購回問題
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            球型馬達省重省電 20%，已搭 SpaceX 火箭上太空測試；與 Northrop Grumman 合作；台美「共同生產」框架下在矽谷設立據點；軍工概念受關注。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 13: 林滄億 ═══ -->
+    <div class="slide" id="s13">
+      <div class="slide-header">
+        <div class="avatar">貼</div>
+        <div class="slide-header-info">
+          <h2>林滄億 <span>Jamson</span></h2>
+          <div class="company">台灣聯合金融科技 Bznk 必可貼現網｜中小企業應收帳款媒合平台</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 金融科技</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">11~20 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">馮博堅</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>研擬及執行成長策略</li>
+            <li>持續調整組織架構</li>
+            <li>動態調整商業模式</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>AI 樹苗信用動態風控模型優化</li>
+            <li>拓展催收與周邊服務收入</li>
+            <li>強化平台媒合效率</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8 ⚠️</span>
+            行銷管道被封鎖導致業務困難，正進行內部流程重整，計劃導入 AI 取代部分人力審查。公司雖從未年度獲利，但透過調整現金流（先收款、後付款）維持營運。
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            累計媒合資金超過 12 億台幣，1,600+ 企業融資案，平均媒合時間 15 分鐘，違約率低於 1%；放棄銀行高薪創辦，服務中小企業周轉。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 14: 張光甫 ═══ -->
+    <div class="slide" id="s14">
+      <div class="slide-header">
+        <div class="avatar">禽</div>
+        <div class="slide-header-info">
+          <h2>張光甫 <span>Aidan</span></h2>
+          <div class="company">智逐科技 iCHASE｜AI IoT 家禽智慧照護系統</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 食農科技</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國際（歐美）</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">1~10 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">3–5 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">高誌廷</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>研擬及執行成長策略</li>
+            <li>建立策略夥伴</li>
+            <li>動態調整商業模式</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>深耕養雞、乳牛、飼料廠等台灣客戶</li>
+            <li>開發 AI 叫聲偵測呼吸道疾病產品</li>
+            <li>美國公司建立 ESOP 激勵制度</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            1月班會：美國公司建立 ESOP 股權激勵計畫
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            AI 即時監控體重、整齊度、叫聲、活動力，24 小時自動化；AccuVision 演算法影像秤重；客戶包含光泉等乳牛廠、白肉雞、蛋雞場；AppWorks 加速器校友；農業部智慧農業科技服務機構認證。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 15: 余泰萬 ═══ -->
+    <div class="slide" id="s15">
+      <div class="slide-header">
+        <div class="avatar">孿</div>
+        <div class="slide-header-info">
+          <h2>余泰萬 <span>Daniel</span></h2>
+          <div class="company">宇見智能科技 MetAI｜工業數位孿生 × Physical AI 模擬平台</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 智慧製造</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value">&lt; 10M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">11~20 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">3–5 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">俞寧寧</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>研擬及執行成長策略</li>
+            <li>動態調整商業模式</li>
+            <li>核心團隊建立</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>訂閱制產品 MetGen 2026/1 上線，美光為首波客戶</li>
+            <li>A 輪 25M 台幣，美國投資人談估值 160~180M</li>
+            <li>今年目標營收 7-8M USD，進備出場</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026 共創會議</span>
+            訂閱制 MetGen 2026/1 上線，美光科技為首波客戶。A 輪 25M 已 Closed 15-17M，還缺 Lead Investor。估值：Pre 100M（台方）vs 美國投資人希望 Post 125M。目標談至 160~180M。去年營收一億，今年目標 7-8M USD，本輪為最後一輪，準備出場。
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            The Information「2025 全球最具潛力 50 家新創」唯一台灣企業；NVIDIA Inception 成員；Addin Ventures、Solomon Technology 投資；NVIDIA Omniverse 展示智慧倉儲應用。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 16: 鄭凱陽 ═══ -->
+    <div class="slide" id="s16">
+      <div class="slide-header">
+        <div class="avatar">播</div>
+        <div class="slide-header-info">
+          <h2>鄭凱陽 <span>Kasper</span></h2>
+          <div class="company">樂播科技 就醬播｜台灣最大直播電商平台</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">數位科技 · 電子商務</span>
+            <span class="badge badge-stage-III">Stage III</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">100M~1B</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">51~100 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">游直翰</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>創辦人 / 執行長領導力提升</li>
+            <li>動態調整商業模式</li>
+            <li>提升國際化運營能力</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>海外市場：泰國、日本、菲律賓</li>
+            <li>全面導入 AI，轉型業務導向</li>
+            <li>考慮籌資支持海外擴張</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            計劃前往菲律賓考察市場；公司全面導入 AI，營運模式轉為「業務導向」；為拓展海外市場而考慮啟動募資
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            平台 GMV 累計超過 1,000 億台幣；2024 年國家品牌玉山獎「最佳產品類」（直播電商首次獲國家獎）；2025 第 24 屆新創事業獎；+1 購物車模式創新，合作直播主超過 2,000 位。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 17: 李威辰 ═══ -->
+    <div class="slide" id="s17">
+      <div class="slide-header">
+        <div class="avatar">🌶</div>
+        <div class="slide-header-info">
+          <h2>李威辰 <span>威辰</span></h2>
+          <div class="company">振禾食品 DoGa｜香酥脆椒、辣椒醬料、餐飲與生活空間品牌</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">生活產品 / 服務 · 食品餐飲</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內為主</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">21~50 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">程淑芬</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>取得公司成長所需資金</li>
+            <li>動態調整商業模式</li>
+            <li>建立策略夥伴</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>鞏固 DoGa 香酥脆椒品牌國際化</li>
+            <li>拓展日本、東南亞出口</li>
+            <li>延伸至餐飲空間（Villa Ubud、Lumière Spa）</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">近期狀況</span>
+            賣旁邊土地、員工持股等資產整理動作，目前尚無新公開動態
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            DoGa 香酥脆椒起家，旗下兩大品牌（DoGa / 杜甲A-ma）；2013 年台南安平第一家店；目標日本市場，已多次出國參展；品牌延伸至印尼 Villa Ubud、Lumière Spa 生活風格事業。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 18: 張琇茹 ═══ -->
+    <div class="slide" id="s18">
+      <div class="slide-header">
+        <div class="avatar">吐</div>
+        <div class="slide-header-info">
+          <h2>張琇茹 <span>Joey</span></h2>
+          <div class="company">吐司利亞國際餐飲 TOASTERiA CAFE｜地中海特色餐廳連鎖</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">生活產品 / 服務 · 食品餐飲</span>
+            <span class="badge badge-stage-III">Stage III</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">100M~1B</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">101+ 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">15–20 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">丁菱娟</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>吸引及留住適合的人才</li>
+            <li>動態調整商業模式</li>
+            <li>探索第二成長曲線</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>籌備餐飲顧問及人才派遣新創業</li>
+            <li>協助收購現有股權</li>
+            <li>成立 Toastmasters 分會練習英文演說</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8 🔄 重大轉變</span>
+            卸任 TOASTERiA CEO 後獲 17 個工作邀約！確認 2026 年 5 月公告全新創業方向：「餐飲顧問 + 人才派遣」。游直翰協助接洽股權收購線；既有股東與上市櫃公司正在談判收購。
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            TOASTERiA CAFE 地中海料理，2008 年創立；員工離職率僅 7%（業界均值 30%）；一頭班制度（8 小時）創業界典範；台中 PARK2 草悟廣場新店展開。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 19: 陳淑惠 ═══ -->
+    <div class="slide" id="s19">
+      <div class="slide-header">
+        <div class="avatar">🧀</div>
+        <div class="slide-header-info">
+          <h2>陳淑惠 <span>Isabella</span></h2>
+          <div class="company">酪庫 慢慢弄乳酪坊｜台灣手工新鮮乳酪品牌</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">生活產品 / 服務 · 食品餐飲</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">11~20 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">0–2 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">楊正大</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>核心團隊與中階主管建立</li>
+            <li>動態調整商業模式</li>
+            <li>取得資金</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>品牌旗艦店擴張</li>
+            <li>成立台灣起司專門協會推廣</li>
+            <li>品牌十週年系列活動</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            旗艦店 2 月正式開幕；新任營運長加入，目前磨合中
+          </div>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            籌備品牌十週年新店開幕；市場出現詐騙集團，考慮主動啟動募資（「與其被騙，不如讓我們用」）
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            台灣首位女性手工乳酪師；米其林星廚指定、總統就職國宴、國籍航空頭等艙使用；2025/3 創立「臺灣起司專門協會 TCPA」，推動起司從生產到評鑑的專業人才培育。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 20: 陳崑元 ═══ -->
+    <div class="slide" id="s20">
+      <div class="slide-header">
+        <div class="avatar">⬛</div>
+        <div class="slide-header-info">
+          <h2>陳崑元 <span>Rex</span></h2>
+          <div class="company">閃動格子 CyberCube｜沉浸式互動感官遊戲體驗空間</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">生活產品 / 服務 · 建築空間</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內為主</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">21~50 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">0–2 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">丁菱娟</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>持續調整組織架構及營運流程</li>
+            <li>動態調整商業模式</li>
+            <li>建立策略夥伴</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>「閃動」超越母公司「光穹遊戲」營業額</li>
+            <li>Q4 募資，買回加盟店拓展海外</li>
+            <li>個人 AI 新創「倉鼠」同步推進</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            「閃動格子」營業額已超越母公司「光穹遊戲」；正處理複雜的股權置換問題；Q2/Q3 順利的話，Q4 計劃募資用於買回加盟店並拓展海外；南港新店試營運中；個人同步經營 AI 新創「倉鼠」專案。
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            台灣首個沉浸式互動感官遊戲體驗；19K Instagram 追蹤者；2025 年在日本設立公司、台灣設立控股公司，並於日本收購遊戲公司。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 21: 鍾菀婷 ═══ -->
+    <div class="slide" id="s21">
+      <div class="slide-header">
+        <div class="avatar">玻</div>
+        <div class="slide-header-info">
+          <h2>鍾菀婷 <span>Winifred</span></h2>
+          <div class="company">明星電控科技 STARTEK｜電控玻璃智慧隔間解決方案</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">生活產品 / 服務 · 建築空間</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內為主</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">1~10 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">3–5 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">俞寧寧</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>提升國際化運營能力</li>
+            <li>動態調整商業模式</li>
+            <li>如何在有限資源下兼顧大 B 與小 B</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>推廣電控玻璃「聰明隱形」品牌</li>
+            <li>拓展智慧建築 B2B 市場</li>
+            <li>探索國際市場機會</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">近期狀況</span>
+            目前無新公開動態更新，持續深耕智慧建築市場
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            台灣第一個電控玻璃智慧隔間美學體驗場域；「聰明隱形」品牌，兼顧隱私與美觀；電控玻璃可透明/霧化一鍵切換；AI 已可輔助室內設計師選材；2026 智慧創新大賞參展。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 22: 馬驊 ═══ -->
+    <div class="slide" id="s22">
+      <div class="slide-header">
+        <div class="avatar">🏕</div>
+        <div class="slide-header-info">
+          <h2>馬驊 <span>Alex</span></h2>
+          <div class="company">蟬說生活｜高端豪華露營與旅宿品牌</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">生活產品 / 服務 · 旅遊</span>
+            <span class="badge badge-stage-II">Stage II</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">10~100M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">11~20 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">0–2 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">張益肇</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>形塑及落實公司企業文化</li>
+            <li>動態調整商業模式</li>
+            <li>多元收入來源</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>加盟模式複製品牌</li>
+            <li>台中古蹟飯店洽談（霧峰林家旁）</li>
+            <li>AI 新創公司籌備</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            台中開設一家新飯店；AI 新創公司正在準備募資與設立（導師可能投資）；洽談台中霧峰林家旁的古蹟飯店合作案
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            蟬說品牌：溪頭生態露營、山中靜靜（台中）、霧繞 WooRao（新竹）、霧語 WooYu（寵物友善）；加盟主題露營區佔 4~6 成；2025/12 共創會議：加盟角度分析各露營區收益模型。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 23: 束凱文 ═══ -->
+    <div class="slide" id="s23">
+      <div class="slide-header">
+        <div class="avatar">🍊</div>
+        <div class="slide-header-info">
+          <h2>束凱文 <span>Kevin</span></h2>
+          <div class="company">蘋果芽數位科技 橘子蘋果程式學苑｜兒童程式教育連鎖品牌</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">生活產品 / 服務 · 教育</span>
+            <span class="badge badge-stage-III">Stage III</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value green">100M~1B</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">51~100 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">10–15 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">馮博堅</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>提升國際化運營能力</li>
+            <li>動態調整商業模式</li>
+            <li>核心團隊人才建立</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>9 月前往日本念 MBA（國際化知識裝備）</li>
+            <li>全公司推動 AI 使用，聚焦優化與策略</li>
+            <li>下一挑戰：如何利用 AI 賺更多錢</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            正在加入扶輪社；今年 9 月前往日本念 MBA；公司幹部已積極運用 AI，著重優化與策略發想；下一階段挑戰：「如何利用 AI 賺更多錢」
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            橘子蘋果：小一至高三程式教育，專案導向學習；2026 暑假推出「財商數學創客營」、「麥塊創客夏令營」；矽谷取經的教育新創；全台據點持續擴展。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 24: 王羽靖 ═══ -->
+    <div class="slide" id="s24">
+      <div class="slide-header">
+        <div class="avatar">💃</div>
+        <div class="slide-header-info">
+          <h2>王羽靖 <span>Alison</span></h2>
+          <div class="company">艸雨田舞蹈劇場｜當代舞蹈創作與場館 IP 經營</div>
+          <div class="badge-row">
+            <span class="badge badge-domain">生活產品 / 服務 · 內容產製</span>
+            <span class="badge badge-stage-I">Stage I</span>
+            <span class="badge badge-market">國內市場</span>
+          </div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric-card"><div class="label">2024 營收</div><div class="value">&lt; 10M</div></div>
+        <div class="metric-card"><div class="label">員工人數</div><div class="value">1~10 人</div></div>
+        <div class="metric-card"><div class="label">成立年資</div><div class="value">6–10 年</div></div>
+        <div class="metric-card"><div class="label">配對導師</div><div class="value">李明哲</div></div>
+      </div>
+      <div class="sections">
+        <div class="card">
+          <h3><span class="icon">🎯</span>三大挑戰</h3>
+          <ul>
+            <li>取得公司成長所需資金</li>
+            <li>舞者 IP 化與收入多元化</li>
+            <li>突破藝術表演產業生態天花板</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🧭</span>策略方向</h3>
+          <ul>
+            <li>建立自有 IP，放大長期商業價值</li>
+            <li>拓展場館自主經營與企業提案</li>
+            <li>臺法國際共製累積品牌影響力</li>
+          </ul>
+        </div>
+        <div class="card section-full">
+          <h3><span class="icon">📡</span>2026 最新動態</h3>
+          <div class="update-item">
+            <span class="tag green">Q1 2026</span>
+            導生會議討論商業模式：舞團 IP 化、場館經營、跨域合作，如何以策略突破產業天花板，建立穩定收入來源
+          </div>
+          <div class="update-item q2">
+            <span class="tag orange">Q2 2026 · 4/8</span>
+            宣傳舞團近期演出，與 AAMA 班級規劃 5 月 24 日結合班會共同觀賞演出
+          </div>
+          <div class="update-item online">
+            <span class="tag blue">網路資訊</span>
+            2017 年創立，7 年共 14 檔演出製作；2025 台法國際共製《親密近地》（台北、台中）；2026 台積心築藝術季受邀演出；2026 桃園鐵玫瑰藝術節《遺屋》。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 25: 動態摘要 ═══ -->
+    <div class="slide" id="s25">
+      <div class="slide-header">
+        <div class="avatar" style="background:#1A73E8;font-size:1.6rem">📊</div>
+        <div class="slide-header-info">
+          <h2>動態摘要 <span>2026 Q2</span></h2>
+          <div class="company">AAMA 第14期 · 24位創業家近況概覽</div>
+          <div class="badge-row">
+            <span class="badge" style="background:#E8F4FF;color:#1A73E8;border:1px solid #1A73E8">🟢 正向 ×8</span>
+            <span class="badge badge-stage-II">🟡 觀察 ×14</span>
+            <span class="badge badge-stage-III">🔴 關注 ×2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sections">
+
+        <!-- ── 全員速覽 ── -->
+        <div class="card section-full">
+          <h3><span class="icon">🗺</span>全員現況速覽</h3>
+          <div class="founder-grid">
+            <div class="founder-chip chip-green" onclick="showSlide(1)"><span class="chip-name">李芷婷</span><span class="chip-co">艾知科技</span><span class="chip-status">🟢 Pre-A 完成，訂單×3</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(2)"><span class="chip-name">黃建堯</span><span class="chip-co">Yallvend</span><span class="chip-status">🟡 日本/東南亞拓展</span></div>
+            <div class="founder-chip chip-green" onclick="showSlide(3)"><span class="chip-name">謝賀祥</span><span class="chip-co">NunoX</span><span class="chip-status">🟢 UA認證，NYC回台</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(4)"><span class="chip-name">林沅霖</span><span class="chip-co">Zeabur</span><span class="chip-status">🟡 現金流緊，赴美募資</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(5)"><span class="chip-name">陳啟桐</span><span class="chip-co">律果科技</span><span class="chip-status">🟡 AI推不動，士氣低</span></div>
+            <div class="founder-chip chip-red" onclick="showSlide(6)"><span class="chip-name">張賀翔</span><span class="chip-co">JENJAN</span><span class="chip-status">🔴 三重財務風險</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(7)"><span class="chip-name">林依蓉</span><span class="chip-co">科淨能源</span><span class="chip-status">🟡 商業化待突破</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(8)"><span class="chip-name">郭翰</span><span class="chip-co">Blutech</span><span class="chip-status">🟡 募資成功，整合組織</span></div>
+            <div class="founder-chip chip-green" onclick="showSlide(9)"><span class="chip-name">鄭智文</span><span class="chip-co">安瑟樂威</span><span class="chip-status">🟢 100MW+，準備IPO</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(10)"><span class="chip-name">周正剛</span><span class="chip-co">Dentscape</span><span class="chip-status">🟡 哈佛合作，A輪籌備</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(11)"><span class="chip-name">鍾成晏</span><span class="chip-co">好孕行生醫</span><span class="chip-status">🟡 資金迫切，FDA申請</span></div>
+            <div class="founder-chip chip-green" onclick="showSlide(12)"><span class="chip-name">張永承</span><span class="chip-co">張量科技</span><span class="chip-status">🟢 A輪完成，NG合作</span></div>
+            <div class="founder-chip chip-red" onclick="showSlide(13)"><span class="chip-name">林滄億</span><span class="chip-co">Bznk</span><span class="chip-status">🔴 管道封鎖，從未獲利</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(14)"><span class="chip-name">張光甫</span><span class="chip-co">iCHASE</span><span class="chip-status">🟡 美國ESOP建置中</span></div>
+            <div class="founder-chip chip-green" onclick="showSlide(15)"><span class="chip-name">余泰萬</span><span class="chip-co">MetAI</span><span class="chip-status">🟢 全球Top50，美光客戶</span></div>
+            <div class="founder-chip chip-green" onclick="showSlide(16)"><span class="chip-name">鄭凱陽</span><span class="chip-co">就醬播</span><span class="chip-status">🟢 GMV 1000億，拓東南亞</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(17)"><span class="chip-name">李威辰</span><span class="chip-co">DoGa</span><span class="chip-status">🟡 資產整理，日本待拓</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(18)"><span class="chip-name">張琇茹</span><span class="chip-co">TOASTERiA</span><span class="chip-status">🟡 卸任CEO，新創轉型</span></div>
+            <div class="founder-chip chip-green" onclick="showSlide(19)"><span class="chip-name">陳淑惠</span><span class="chip-co">慢慢弄乳酪坊</span><span class="chip-status">🟢 旗艦店開幕，十週年</span></div>
+            <div class="founder-chip chip-green" onclick="showSlide(20)"><span class="chip-name">陳崑元</span><span class="chip-co">閃動格子</span><span class="chip-status">🟢 超越母公司，Q4募資</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(21)"><span class="chip-name">鍾菀婷</span><span class="chip-co">STARTEK</span><span class="chip-status">🟡 持續深耕，智慧建築</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(22)"><span class="chip-name">馬驊</span><span class="chip-co">蟬說生活</span><span class="chip-status">🟡 古蹟飯店+AI新創</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(23)"><span class="chip-name">束凱文</span><span class="chip-co">橘子蘋果</span><span class="chip-status">🟡 CEO赴日MBA，AI轉型</span></div>
+            <div class="founder-chip chip-yellow" onclick="showSlide(24)"><span class="chip-name">王羽靖</span><span class="chip-co">艸雨田舞蹈</span><span class="chip-status">🟡 IP化待突破，5月演出</span></div>
+          </div>
+        </div>
+
+        <!-- ── 近期重要網路新聞 ── -->
+        <div class="card section-full">
+          <h3><span class="icon">📰</span>近期重要網路新聞彙整</h3>
+          <div class="news-row">
+            <div class="news-item" style="border-left-color:#F5A020">
+              <div class="news-ico">⚡</div>
+              <div>
+                <div class="news-title">安瑟樂威 鄭智文：受邀 2026 SDGs×DEI 國際論壇，VPP 100MW+ 能源轉型代表｜2026 Q2</div>
+                <div class="news-desc">以虛擬電廠（VPP）累計超過 100MW 規模、30,000+ 小時運行紀錄，代表台灣能源新創登上國際永續論壇舞台。2026 底目標登錄創新板，泰國、新加坡海外佈局同步推進。</div>
+                <div class="news-src">📎 <a href="https://howlife.cna.com.tw/financial/20260409s010.aspx" target="_blank">中央社 CNA · 2026/04/09</a></div>
+              </div>
+            </div>
+            <div class="news-item" style="border-left-color:#1A73E8">
+              <div class="news-ico">🛰️</div>
+              <div>
+                <div class="news-title">張量科技 張永承：球型馬達專利受矚，列台灣衛星軍工概念股｜2026 Q1</div>
+                <div class="news-desc">美台國防合作背景下，張量科技因掌握衛星姿態控制球型馬達專利，被點名具「破壞式創新」潛力。已打入國際航太供應鏈，預計赴美設點對接 Northrop Grumman 等防務大廠。</div>
+                <div class="news-src">📎 <a href="https://tw.news.yahoo.com/%E8%BB%8D%E5%B7%A5%E6%A6%82%E5%BF%B5%E8%82%A1-%E5%BC%B5%E9%87%8F%E7%A7%91%E6%8A%80-%E6%98%87%E9%8A%B3-%E5%A5%87%E7%B4%98-233824481.html" target="_blank">Yahoo 財經 · 2026/02/15</a></div>
+              </div>
+            </div>
+            <div class="news-item" style="border-left-color:#1A73E8">
+              <div class="news-ico">⚖️</div>
+              <div>
+                <div class="news-title">律果科技 陳啟桐：AI 法務助理如何幫中小企業省下法律顧問費？｜2026 Q2</div>
+                <div class="news-desc">受邀 METAMatch Match Talks 分享 LegalSign.ai 以 AI 自動化合約審查、法規遵循，協助中小企業大幅降低法律諮詢成本的實戰經驗與產品思維。</div>
+                <div class="news-src">📎 <a href="https://www.metamatch.market/news/detail/20260409-METAMatch-Match-Talks" target="_blank">METAMatch · 2026/04/09</a></div>
+              </div>
+            </div>
+            <div class="news-item" style="border-left-color:#1A73E8">
+              <div class="news-ico">🔋</div>
+              <div>
+                <div class="news-title">博世科智能 郭翰：完成 A 輪 7,000 萬，參展 2026 智慧城市展展示 AI 能源決策系統｜2026 Q1–Q2</div>
+                <div class="news-desc">獲迅德機械領投 7,000 萬台幣 A 輪，並與美光（Micron）達成策略合作；同步受邀 Smart City Summit & Expo 2026 展示無線儀錶整合 AI 能源預測系統，打入工廠節能市場。</div>
+                <div class="news-src">📎 <a href="https://www.blutech.com.tw/en/blutech-sets-a-new-benchmark-in-ai-energy-management-with-nt70-million-series-a-funding-led-by-xunde-machinery-and-strategic-collaboration-with-micron/" target="_blank">Blutech 官方 · 2026/04/10</a></div>
+              </div>
+            </div>
+            <div class="news-item" style="border-left-color:#1A73E8">
+              <div class="news-ico">🦷</div>
+              <div>
+                <div class="news-title">德睿生醫 周正剛：Dentscape 受邀參展 LMT LAB DAY Chicago 2026｜2026 Q1</div>
+                <div class="news-desc">Dentscape AI 雲端假牙設計平台受邀參展北美最大牙技實驗室盛會 LMT LAB DAY Chicago（2026/02/19–21），正式打入美國牙科技工所市場，拓展北美商業版圖。</div>
+                <div class="news-src">📎 <a href="https://lmtmag.com/shows/lmt-lab-day-chicago-2026/exhibitors" target="_blank">LMT Magazine · 2026/02</a></div>
+              </div>
+            </div>
+            <div class="news-item" style="border-left-color:#F5A020">
+              <div class="news-ico">💻</div>
+              <div>
+                <div class="news-title">橘子蘋果 束凱文：受邀 EDA Founder's Talk，分享不募資也能規模化的成長之路｜2026 Q1</div>
+                <div class="news-desc">受邀 EDA（創業者發展聯盟）Founder's Talk 擔任主講人，分享從 2 人到 60+ 員工、不仰賴外部資金的自力規模化路徑，以及赴日讀 MBA 後對組織領導的新思維。</div>
+                <div class="news-src">📎 <a href="https://www.accupass.com/event/2602030357271637707540" target="_blank">Accupass · 2026/03/27</a></div>
+              </div>
+            </div>
+            <div class="news-item" style="border-left-color:#F5A020">
+              <div class="news-ico">🩰</div>
+              <div>
+                <div class="news-title">艸雨田舞蹈劇場 王羽靖：《遺屋》入選 2026 桃園鐵玫瑰藝術節｜2026 Q1</div>
+                <div class="news-desc">以台灣首部聚焦「孤獨死」議題的當代舞蹈作品《遺屋》入選桃園市政府主辦的鐵玫瑰藝術節，在中壢藝術館音樂廳演出，演出約 70 分鐘並附設演後座談。</div>
+                <div class="news-src">📎 <a href="https://www.opentix.life/event/2007989419999776769" target="_blank">OPENTIX 兩廳院 · 2026 Q1</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 近況觀察 ── -->
+        <div class="card">
+          <h3><span class="icon">🔴</span>重點關注</h3>
+          <div class="obs-block obs-red">
+            <div class="obs-item"><strong>JENJAN / 張賀翔：</strong>三重壓力同步發生——① 1,000 萬台幣投資移民匯出 ② 紐約疑似「紅色資本」拒投 115 萬美元 ③ 財報定義不清影響 3.2 億盡調進度。</div>
+            <div class="obs-item"><strong>Bznk / 林滄億：</strong>行銷主力管道遭封鎖（疑似廣告帳號），公司尚未達成年度獲利，現以先收款後付款方式維持現金流。</div>
+            <div class="obs-item"><strong>Blutech / 郭翰：</strong>A 輪募資完成（迅德機械領投 7,000 萬）。現階段面臨加薪政策引發的內部組織意見分歧，治理架構正在調整中。</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3><span class="icon">🟡</span>持續觀察</h3>
+          <div class="obs-block obs-yellow">
+            <div class="obs-item"><strong>Zeabur / 林沅霖：</strong>用戶快速成長但現金燃燒加速，正籌備赴美市場切入，資金跑道與時程安排緊湊。</div>
+            <div class="obs-item"><strong>律果科技 / 陳啟桐：</strong>客製化需求比重高，AI 標準化產品推進速度較慢；正摸索從服務型到產品型的商業模式轉換。</div>
+            <div class="obs-item"><strong>好孕行生醫 / 鍾成晏：</strong>台灣 TFDA 與美國 FDA 雙軌認證同步推進，中東市場商業合作已啟動，持續打開海外醫材通路。</div>
+            <div class="obs-item"><strong>MetAI / 余泰萬：</strong>本輪估值談判中，仍在尋找 Lead Investor；首波客戶美光已驗證交付能力，出場評估啟動中。</div>
+            <div class="obs-item"><strong>科淨能源 / 林依蓉：</strong>CO₂ 電化學轉換技術持續推進，商業化時程與台灣、日本碳市場政策節奏連動，Pre-seed 後資金規劃進行中。</div>
+          </div>
+        </div>
+
+        <!-- ── 亮點 + 產業趨勢 ── -->
+        <div class="card">
+          <h3><span class="icon">⭐</span>近期亮點</h3>
+          <div class="obs-block obs-green">
+            <div class="obs-item"><strong>艾知科技：</strong>防衛科技訂單超預估 3 倍，與和碩達成量產合作，打入台美國防供應鏈。</div>
+            <div class="obs-item"><strong>張量科技：</strong>A 輪完成，與 Northrop Grumman 洽談合作，台美共同生產框架下衛星供應鏈布局加速。</div>
+            <div class="obs-item"><strong>安瑟樂威：</strong>VPP 累計規模突破 100MW，2026 底目標申請創新板上市，泰國、新加坡同步布局中。</div>
+            <div class="obs-item"><strong>MetAI：</strong>入選 The Information 全球 Top 50，是榜上唯一台灣企業，首波客戶美光已完成交付驗證。</div>
+            <div class="obs-item"><strong>就醬播：</strong>GMV 突破 1,000 億，首獲國家品牌玉山獎，東南亞市場擴張持續推進。</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3><span class="icon">📊</span>產業趨勢觀察</h3>
+          <div class="trend-item"><strong>🛡️ 防衛科技需求爆發</strong><br>AiSeed 訂單超預估 3 倍、Tensor Tech 軍工概念持續受市場關注。台美國防合作框架帶動相關新創訂單加速，供應鏈管理與法規合規成為關鍵能力。</div>
+          <div class="trend-item"><strong>⚡ 能源轉型政策加速</strong><br>VPP（安瑟樂威）、CO₂ 轉換（科淨能源）、AIoT 能源管理（Blutech）三條路線同步發展。台灣 2050 淨零目標持續帶動商機，電業法修正進程影響市場規則。</div>
+          <div class="trend-item"><strong>🤖 AI 滲透各垂直行業</strong><br>法律（律果）、製造（MetAI）、農業（iCHASE）、金融（Bznk）全面導入 AI。「從 POC 到規模化訂單」是各家共同面對的轉折點，商業模式驗證能力至關重要。</div>
+          <div class="trend-item"><strong>💰 現金流壓力普遍上升</strong><br>Q2 有多家同步面臨募資需求（Zeabur、JENJAN、Bznk、好孕行、科淨能源），資金跑道管理成為本季共同課題。</div>
+          <div class="trend-item"><strong>🌏 海外擴張各有策略</strong><br>歐美市場（高技術壁壘、估值較高）vs 東南亞市場（落地較快、競爭激烈）。各家根據產品特性選擇切入方向，資源集中度是差異化關鍵。</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /slide-area -->
+
+  <div class="kbd-hint">
+    按 <span class="kbd">←</span> <span class="kbd">→</span> 換頁｜按 <span class="kbd">Home</span> 回封面
+  </div>
+</div><!-- /slides-wrapper -->
+
+<script>
+let current = 1;
+const total = 25;
+
+function startSlides() {
+  document.getElementById('cover').style.display = 'none';
+  document.getElementById('slides-wrapper').style.display = 'flex';
+  showSlide(1);
+}
+
+function showSlide(n) {
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById('s' + n);
+  if (el) el.classList.add('active');
+  document.getElementById('slide-area').scrollTop = 0;
+  document.getElementById('counter').textContent = n + ' / ' + total;
+  document.getElementById('progress').style.width = (n / total * 100) + '%';
+  document.getElementById('prev-btn').disabled = n === 1;
+  document.getElementById('next-btn').disabled = n === total;
+  current = n;
+}
+
+function changeSlide(dir) {
+  const n = current + dir;
+  if (n >= 1 && n <= total) showSlide(n);
+}
+
+function goHome() {
+  document.getElementById('slides-wrapper').style.display = 'none';
+  document.getElementById('cover').style.display = 'flex';
+}
+
+document.addEventListener('keydown', e => {
+  if (document.getElementById('slides-wrapper').style.display !== 'flex') return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
+  if (e.key === 'Home') goHome();
+});
+
+// ── Google Sheets 即時資料 ──
+const SHEET_ID = '1uG3DzvT4zpPorYBHqEex7t-Vh1-Up4f9dAEjX-DUbmg';
+const SHEET_GID = '447308369';
+// CSV 欄位索引（第0列為標題）
+const SHEET_QUARTERS = [
+  { col: 10, label: '2025 Q4' },
+  { col: 11, label: '2026 Q1' },
+  { col: 13, label: '2026 Q2' },
+  { col: 14, label: '2026 Q3' },
+];
+
+function parseCSV(text) {
+  const rows = [];
+  let row = [], field = '', inQ = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i], nx = text[i + 1];
+    if (inQ) {
+      if (ch === '"' && nx === '"') { field += '"'; i++; }
+      else if (ch === '"') { inQ = false; }
+      else { field += ch; }
+    } else {
+      if (ch === '"') { inQ = true; }
+      else if (ch === ',') { row.push(field); field = ''; }
+      else if (ch === '\n') { row.push(field); rows.push(row); row = []; field = ''; }
+      else if (ch !== '\r') { field += ch; }
+    }
+  }
+  if (field || row.length) { row.push(field); rows.push(row); }
+  return rows;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function injectSheetCards() {
+  for (let i = 1; i <= 24; i++) {
+    const slide = document.getElementById('s' + i);
+    if (!slide) continue;
+    const sections = slide.querySelector('.sections');
+    if (!sections) continue;
+    const card = document.createElement('div');
+    card.className = 'sheet-live-card';
+    card.id = 'sheet-s' + i;
+    card.innerHTML = '<h3>📋 試算表即時資料 <span class="sheet-live-dot"></span></h3>'
+      + '<div class="sheet-msg">⏳ 資料載入中…</div>';
+    sections.appendChild(card);
+  }
+}
+
+async function loadSheetData() {
+  injectSheetCards();
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
+  try {
+    const res = await fetch(url, { redirect: 'follow' });
+    const text = await res.text();
+    const rows = parseCSV(text);
+    // rows[0] = 標題列，rows[1] = 李芷婷(slide 1)，依此類推
+    rows.slice(1).forEach((row, idx) => {
+      const slideNum = idx + 1;
+      const card = document.getElementById('sheet-s' + slideNum);
+      if (!card) return;
+      const quarters = SHEET_QUARTERS
+        .map(q => ({ label: q.label, text: (row[q.col] || '').trim() }))
+        .filter(q => q.text);
+
+      let html = '<h3>📋 試算表即時資料 <span class="sheet-live-dot"></span></h3>';
+      if (quarters.length === 0) {
+        html += '<div class="sheet-msg">尚無動態紀錄</div>';
+      } else {
+        quarters.forEach(q => {
+          html += `<div class="sheet-q-block"><div class="sheet-q-label">${q.label}</div>`
+               + `<div class="sheet-q-text">${escHtml(q.text)}</div></div>`;
+        });
+      }
+      card.innerHTML = html;
+    });
+  } catch (e) {
+    for (let i = 1; i <= 24; i++) {
+      const card = document.getElementById('sheet-s' + i);
+      if (card) card.innerHTML = '<h3>📋 試算表即時資料</h3>'
+        + '<div class="sheet-msg">⚠️ 載入失敗，請確認試算表已設為公開可讀</div>';
+    }
+  }
+}
+
+const SLIDE_STATUS = {
+  1:'green', 2:'yellow', 3:'green',  4:'yellow', 5:'yellow',
+  6:'red',   7:'yellow', 8:'yellow', 9:'green',  10:'yellow',
+  11:'yellow',12:'green',13:'red',   14:'yellow',15:'green',
+  16:'green', 17:'yellow',18:'yellow',19:'green', 20:'green',
+  21:'yellow',22:'yellow',23:'yellow',24:'yellow'
+};
+const STATUS_LABEL = { green:'🟢 正向', yellow:'🟡 觀察', red:'🔴 關注' };
+
+function enhanceSlides() {
+  for (let i = 1; i <= 24; i++) {
+    const slide = document.getElementById('s' + i);
+    if (!slide) continue;
+
+    const badgeRow = slide.querySelector('.badge-row');
+    const metrics  = slide.querySelector('.metrics');
+
+    // 1. Status badge
+    if (badgeRow && SLIDE_STATUS[i]) {
+      const st = SLIDE_STATUS[i];
+      const sb = document.createElement('span');
+      sb.className = 'badge badge-status-' + st;
+      sb.textContent = STATUS_LABEL[st];
+      badgeRow.insertBefore(sb, badgeRow.firstChild);
+    }
+
+    // 2. Move 配對導師 from metrics to badge-row
+    if (metrics && badgeRow) {
+      const labels = metrics.querySelectorAll('.label');
+      labels.forEach(lbl => {
+        if (lbl.textContent.trim() === '配對導師') {
+          const val = lbl.nextElementSibling;
+          const mentorName = val ? val.textContent.trim() : '';
+          if (mentorName) {
+            const mb = document.createElement('span');
+            mb.className = 'badge badge-mentor';
+            mb.textContent = '導師：' + mentorName;
+            badgeRow.appendChild(mb);
+          }
+          lbl.closest('.metric-card').remove();
+        }
+      });
+      metrics.style.gridTemplateColumns = 'repeat(3, 1fr)';
+    }
+
+    // 3. Card tinting for 三大挑戰 / 策略方向
+    slide.querySelectorAll('.card').forEach(card => {
+      const h3text = (card.querySelector('h3') || {}).textContent || '';
+      if (h3text.includes('三大挑戰')) card.classList.add('card-challenge');
+      else if (h3text.includes('策略方向')) card.classList.add('card-strategy');
+    });
+
+    // 4. Timeline wrapper for 最新動態
+    slide.querySelectorAll('.card').forEach(card => {
+      const h3text = (card.querySelector('h3') || {}).textContent || '';
+      if (h3text.includes('最新動態')) {
+        const items = Array.from(card.querySelectorAll('.update-item'));
+        if (items.length > 0) {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'updates-timeline';
+          items[0].parentNode.insertBefore(wrapper, items[0]);
+          items.forEach(it => wrapper.appendChild(it));
+        }
+      }
+    });
+  }
+}
+
+function injectPhotos() {
+  for (let i = 1; i <= 24; i++) {
+    const avatar = document.querySelector(`#s${i} .avatar`);
+    if (!avatar) continue;
+    avatar.innerHTML = `<img src="photos/s${i}.png" alt="" onerror="this.parentNode.innerHTML=this.parentNode.dataset.fallback">`;
+    avatar.dataset.fallback = avatar.textContent.trim() || '?';
+  }
+}
+
+injectPhotos();
+enhanceSlides();
+loadSheetData();
+</script>
+</body>
+</html>
